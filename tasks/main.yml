@@ -6,12 +6,12 @@
 
 - name: Create docker_compose_url variable if did not specify version
   set_fact:
-    docker_compose_url: "https://github.com/docker/compose/releases/download/{{ _latest|json_query('json.tag_name') }}/docker-compose-{{ansible_os_family}}-{{ansible_architecture}}"
+    docker_compose_url: "https://github.com/docker/compose/releases/download/{{ _latest|json_query('json.tag_name') }}/docker-compose-{{ansible_system}}-{{ansible_architecture}}"
   when: docker_compose_version is undefined or docker_compose_version is none or docker_compose_version|lower == "latest"
 
 - name: Create docker_compose_url variable if specified version
   set_fact:
-    docker_compose_url: "https://github.com/docker/compose/releases/download/{{docker_compose_version}}/docker-compose-{{ansible_os_family}}-{{ansible_architecture}}"
+    docker_compose_url: "https://github.com/docker/compose/releases/download/{{docker_compose_version}}/docker-compose-{{ansible_system}}-{{ansible_architecture}}"
   when: docker_compose_version is defined and docker_compose_version is not none and docker_compose_version|lower != "latest"
 
 - name: Ensure parent folder of docker compose is exists
