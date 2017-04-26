@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
-  remote_user: root
+- hosts: all
+
   roles:
-    - docker-compose
+    - role_under_test
