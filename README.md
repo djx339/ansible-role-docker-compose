@@ -1,6 +1,8 @@
 Role Name
 =========
 
+[![Build Status](https://travis-ci.org/djx339/ansible-role-docker-compose.svg?branch=master)](https://travis-ci.org/djx339/ansible-role-docker-compose)
+
 A brief description of the role goes here.
 
 Requirements
